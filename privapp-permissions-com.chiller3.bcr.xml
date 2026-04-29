@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2022-2026 Andrew Gunnerson
+    SPDX-License-Identifier: GPL-3.0-only
+-->
+
+<permissions>
+    <privapp-permissions package="com.chiller3.bcr">
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+        <permission name="android.permission.CONTROL_INCALL_EXPERIENCE" />
+    </privapp-permissions>
+</permissions>

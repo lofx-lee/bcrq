@@ -1,0 +1,61 @@
+android_app {
+    name: "BCR",
+    srcs: [
+        "java/**/*.kt",
+        "java/**/*.java",
+        "kotlin/**/*.kt",
+        "kotlin/**/*.java",
+    ],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    privileged: true,
+    product_specific: true,
+    
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat",
+        "androidx.activity_activity-ktx",
+        "androidx.fragment_fragment-ktx",
+        "androidx.documentfile_documentfile",
+        "androidx.preference_preference",
+        "androidx.recyclerview_recyclerview",
+        "com.google.android.material_material",
+        "libphonenumber",
+        "bcr-kudzu-prebuilt",
+        "bcr-kotlinx-serialization-core",
+        "bcr-kotlinx-serialization-json",
+    ],
+
+    required: ["privapp-permissions-com.chiller3.bcr.xml"],
+
+    optimize: {
+        enabled: true,
+        proguard_flags_files: ["proguard.flags"],
+    },
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-com.chiller3.bcr.xml",
+    sub_dir: "permissions",
+    src: "privapp-permissions-com.chiller3.bcr.xml",
+    filename_from_src: true,
+    product_specific: true,
+}
+
+java_import {
+    name: "bcr-kudzu-prebuilt",
+    jars: ["libs/kudzu-core-jvm-6.1.0.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "bcr-kotlinx-serialization-core",
+    jars: ["libs/kotlinx-serialization-core-jvm-1.10.0.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "bcr-kotlinx-serialization-json",
+    jars: ["libs/kotlinx-serialization-json-jvm-1.10.0.jar"],
+    sdk_version: "current",
+}
