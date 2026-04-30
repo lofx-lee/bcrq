@@ -90,7 +90,7 @@
         </service>
 
         <provider
-            android:authorities="@string/provider_authority"
+            android:authorities="com.chiller3.bcr.provider"
             android:name=".RecorderProvider"
             android:exported="false"
             android:grantUriPermissions="true">
