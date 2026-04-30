@@ -66,11 +66,10 @@ class Preferences(initialContext: Context) {
 
         // Defaults
         val DEFAULT_FILENAME_TEMPLATE = Template(
-            "{date}" +
+            "{date:yyyy-MM-dd_HH.mm.ss}" +
                     "[_{direction}|]" +
-                    "[_sim{sim_slot}|]" +
-                    "[_{phone_number}|]" +
-                    "[_[{contact_name}|{caller_name}|{call_log_name}]|]"
+                    "[_{contact_name}|]" +
+                    "[_{phone_number}|]"
         )
         val DEFAULT_RECORD_RULES = listOf(
             RecordRule(
