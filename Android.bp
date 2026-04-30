@@ -7,7 +7,6 @@ android_app {
         "kotlin/**/*.java",
     ],
     resource_dirs: ["res"],
-    certificate: "platform",
     privileged: true,
     product_specific: true,
     sdk_version: "current",
