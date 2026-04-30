@@ -13,8 +13,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.preference.Preference
-import androidx.preference.get
-import androidx.preference.size
+// import androidx.preference.get
+// import androidx.preference.size
 import com.chiller3.bcr.ContactGroupInfo
 import com.chiller3.bcr.PreferenceBaseFragment
 import com.chiller3.bcr.R
@@ -49,8 +49,8 @@ class PickContactGroupFragment : PreferenceBaseFragment(), Preference.OnPreferen
     private fun updateGroups(newGroups: List<ContactGroupInfo>) {
         val context = requireContext()
 
-        for (i in (0 until preferenceScreen.size).reversed()) {
-            val p = preferenceScreen[i]
+        for (i in (0 until preferenceScreen.preferenceCount).reversed()) {
+            val p = preferenceScreen.getPreference(i)
             preferenceScreen.removePreference(p)
         }
 

@@ -28,11 +28,13 @@ android_app {
         "bcr-kudzu-prebuilt",
         "bcr-kotlinx-serialization-core",
         "bcr-kotlinx-serialization-json",
+        "bcr-viewbinding-prebuilt",
     ],
 
-    required: ["privapp-permissions-com.chiller3.bcr.xml"
-    "config-com.chiller3.bcr.xml",
-    "preinstalled-packages-platform-bcr.xml",
+    required: [
+        "privapp-permissions-com.chiller3.bcr.xml",
+        "config-com.chiller3.bcr.xml",
+        "preinstalled-packages-platform-bcr.xml",
     ],
 
     optimize: {
@@ -56,6 +58,12 @@ java_import {
 java_import {
     name: "bcr-kotlinx-serialization-json",
     jars: ["libs/kotlinx-serialization-json-jvm-1.10.0.jar"],
+    sdk_version: "current",
+}
+
+android_library_import {
+    name: "bcr-viewbinding-prebuilt",
+    aars: ["libs/viewbinding-8.2.0.aar"],
     sdk_version: "current",
 }
 
